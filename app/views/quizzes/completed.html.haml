@@ -1,0 +1,11 @@
+.container
+
+  .welcome_completed
+    .title
+      = "Thank you for completeing the #{@quiz.name.capitalize} questionnaire #{@user.first_name.capitalize}"
+    .welcome_message
+      Return back home if you would like to take more questionnaires!
+
+    = link_to root_path do
+      .home_button
+        Home

@@ -1,0 +1,26 @@
+.container
+
+  .new_questionnaire
+    = link_to root_path do
+      .new_quiz_button
+        Home
+
+  .welcome
+    .title
+      = "Results for the #{@quiz.name} questionnaire"
+
+
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Email
+        - @questions.each do |question|
+          %th= question.text
+    %tbody
+      - @users.each do |user|
+        %tr
+        %td= "#{user.first_name} #{user.last_name}"
+        %td= user.email
+        - user.answers.each do |answer|
+          %td= answer.text

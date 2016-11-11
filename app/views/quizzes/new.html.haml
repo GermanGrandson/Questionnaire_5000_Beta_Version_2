@@ -1,0 +1,49 @@
+.container
+
+  .new_questionnaire
+    = link_to root_path do
+      .new_quiz_button
+        Home
+
+  .quiz_text
+    .quiz_welcome
+      Hello User!
+      %br
+      Welcome to the Quiz Creator 5000 Version 2 Beta
+    .quiz_create
+      Please create a Questionnaire by adding questions below.
+
+  .error_message
+    Please do not leave any blanks!
+
+  .start_question
+    Start
+
+  = render 'form'
+
+
+:javascript
+  $(function(){
+    $('.start_question').click(function(){
+      $('.input-half').css('display', 'block').fadeIn('slow');
+      //$('.start_question').css('display', 'none');
+      $('.question').css('display', 'block').fadeIn('slow');
+    })
+  })
+
+  $(function(){
+    $('.question').click(function(){
+      $('.nested-fields').css('display', 'block')
+      $('.submit').css('display','block')
+    })
+  })
+
+
+  $(function(){
+    $('.submit').click(function(){
+      if($('input#quiz_name').val() == '' || $('input#quiz_label').val() == '' || $('textarea.text.optional').val() == ''){
+      $('.error_message').css('display', 'block')
+      return false
+      }
+    })
+  })

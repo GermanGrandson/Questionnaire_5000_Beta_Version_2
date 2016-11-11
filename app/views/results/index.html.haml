@@ -1,0 +1,21 @@
+.container
+
+  .new_questionnaire.home
+    = link_to root_path do
+      .new_quiz_button
+        Home
+
+  .welcome
+    .title
+      Welcome to the Questionnaire Creator 5000 Version 2 Beta.
+
+    .welcome_message
+      Here you will find all the Questionnaires that have been completed.
+      %br
+      Please select a Questionnaire to see who has completed it and their results!
+
+  .questionnaires
+    .questionnaire_area
+      - @quizzes.each do |quiz|
+        = link_to results_score_path(quiz) do
+          .quiz_box

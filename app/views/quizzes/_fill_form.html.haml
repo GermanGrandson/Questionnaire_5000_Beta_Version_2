@@ -1,0 +1,52 @@
+= simple_form_for @user, url:create_quest_path, method: :post  do |u|
+
+  = u.hidden_field :quiz_id, value: @quiz.id
+
+  .input-half-name
+    = u.input :first_name
+  .input-half-name
+    = u.input :last_name
+  .input-half-name
+    = u.input :email
+
+  .start_questionnaire
+    Begin
+
+  - @num = 0
+  = u.simple_fields_for :answers do |answer|
+    - @num += 1
+    -# - @quiz.questions.each do |question|
+    .input-half
+      = answer.input :text, label: "Question #{@num}", placeholder: @questions[@num]
+
+  .error_message_begin
+    Please do not leave any blanks!
+
+  .submit
+    = u.button :submit, 'Submit Questionnaire'
+
+:javascript
+  $(function(){
+    $('.start_questionnaire').click(function(){
+      $('.input-half').css('display', 'block').fadeIn('slow');
+      $('.submit').css('display', 'block').fadeIn('slow')
+      $('.question').css('display', 'block').fadeIn('slow');
+    })
+  })
+
+  $(function(){
+    $('.question').click(function(){
+      $('.nested-fields').css('display', 'block')
+      $('.submit').css('display','block')
+    })
+  })
+
+
+  $(function(){
+    $('.submit').click(function(){
+      if($('input#user_first_name').val() == '' || $('input#user_last_name').val() == '' || $('input#user_email').val() == '' || $('textarea.text.optional').val() == ''){
+      $('.error_message_begin').css('display', 'block')
+      return false
+      }
+    })
+  })

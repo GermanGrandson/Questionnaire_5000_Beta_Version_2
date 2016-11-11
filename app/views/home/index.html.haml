@@ -1,0 +1,25 @@
+.container
+
+  .button_options
+
+    .new_questionnaire
+      = link_to new_quiz_path do
+        .new_quiz_button
+          New Quiz
+
+    .new_questionnaire.admin
+      = link_to results_path do
+        .new_quiz_button.admin
+          ADMIN Stuff
+
+  .welcome
+    .title
+      Welcome to Questionnaire 5000 Version 2 Beta.
+    .welcome_message
+      Please select a Questionnaire from below to take. Your input is very important to us!
+
+  .questionnaires
+    .questionnaire_area
+      - @quizzes.each do |quiz|
+        = link_to quiz_path(quiz) do
+          .quiz_box

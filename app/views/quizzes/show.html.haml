@@ -1,0 +1,20 @@
+.container
+  .new_questionnaire
+    = link_to root_path do
+      .new_quiz_button
+        Home
+
+  .welcome
+    .title
+      Welcome to Questionnaire 5000 Version 2 Beta.
+    .welcome_message
+      Please complete the Questionnaire below
+
+
+  .questionnaire_area
+    .questionnaire_name
+      = @quiz.name
+    .questionnaire_label
+      = @quiz.label
+
+    = render 'fill_form'

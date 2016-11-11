@@ -1,0 +1,14 @@
+= simple_form_for @quiz do |f|
+  .input-half
+    = f.input :name
+  .input-half
+    = f.input :label
+
+  = f.simple_fields_for :questions do |question|
+    = render 'question_fields', f: question
+
+  .question
+    = link_to_add_association 'Add question', f, :questions
+
+  .submit
+    = f.submit
