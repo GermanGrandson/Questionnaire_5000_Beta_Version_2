@@ -19,3 +19,5 @@
       - @quizzes.each do |quiz|
         = link_to results_score_path(quiz) do
           .quiz_box
+            .quiz_box_text
+              = quiz.name

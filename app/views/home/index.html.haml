@@ -23,3 +23,5 @@
       - @quizzes.each do |quiz|
         = link_to quiz_path(quiz) do
           .quiz_box
+            .quiz_box_text
+              = quiz.name

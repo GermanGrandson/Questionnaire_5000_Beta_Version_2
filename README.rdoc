@@ -1,28 +1,31 @@
-== README
+Welcome to the Questionnaire 5000 Version 2 Beta!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a questionnaire app that allows you to create a questionnaire. The questionnaire can be completed by a user and later reviewed in the admin page.
 
-Things you may want to cover:
+Currently there is no security so any user can access the Admin page. But if you don't have admin credentials DON'T ACCESS IT!
 
-* Ruby version
+The Questionnaire 5000 is also mobile and large screen responsive, so we have you covered.
 
-* System dependencies
+==========================================================================================
 
-* Configuration
+* Quiz and Questionnaire are the same thing in this application*
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- In order to create a questionnaire click on the New Quiz button and click start.
+- Fill in your Name and a Label (Description) that you would like to give to your questionnaire
+- This application uses the Cocoon gem which uses jquery to create a nested form. Simply click ADD QUESTION. You can add as many Questions as you would like.
+- IN ORDER FOR THE FORM TO WORK, YOU MUST FILL OUT EVERY FIELD, or an error message will appear
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+==========================================================================================
+
+
+- In order to take a questionnaire, simple click on one of the Question mark boxes in the home page.
+- Here you must fill in your full name and email then click the BEGIN button which also uses Cocoon.
+- The Questions for the questionnaire will appear and you can then submit the Questionnaire
+- Once completed you will get a confirmation that you have completed the questionnaire and you may return home.
+
+==========================================================================================
+
+- IF YOU ARE AN ADMIN, you may access the admin page by clicking on the admin button on the home page.
+- In order to see results for a questionnaire, simply click on the correct box.
+- On the results show age you will see every user that has completed the questionnaire with their info and their answers!
